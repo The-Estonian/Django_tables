@@ -16,18 +16,42 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
     padding: 3rem 0;
     min-height: 100%;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
     table{
-        scrollbar-width: none;
-        border: 1px solid black;
-        td{
-            border: 1px solid black;
+        position: sticky;
+        width: 90%;
+        top: 0;
+        border-collapse: collapse;
+        th{
+            background: rgb(105, 197, 162);
+            position: sticky;
+            top: 0;
             padding: 0.5rem;
+            a{
+                text-decoration: none;
+                color: black;
+            }
         }
-        &::-webkit-scrollbar{
-            display: none;
+        tr{
+            td{
+                border-bottom: 1px solid black;
+                padding: 0.5rem;
+            }
+
+            &:hover{
+                background: rgba(red, 0.3);
+            }
         }
     }
 }
