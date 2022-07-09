@@ -30,6 +30,7 @@ html body {
   scrollbar-width: none;
 }
 .table-container table {
+  border: 1px solid black;
   position: -webkit-sticky;
   position: sticky;
   width: 90%;
@@ -53,4 +54,23 @@ html body {
 }
 .table-container table tr:hover {
   background: rgba(255, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.form-delete input[type=submit] {
+  background: linear-gradient(59deg, rgba(255, 0, 0, 0.336), rgba(0, 0, 255, 0.295));
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  outline: none;
+  border: 1px black solid;
+  cursor: pointer;
+}
+.form-delete input[type=submit]:hover {
+  background: black;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

@@ -29,6 +29,7 @@ html{
     overflow-x: hidden;
     scrollbar-width: none;
     table{
+        border: 1px solid black;
         position: sticky;
         width: 90%;
         top: 0;
@@ -52,6 +53,26 @@ html{
             &:hover{
                 background: rgba(red, 0.3);
             }
+        }
+    }
+}
+
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+.form-delete{
+    input[type="submit"]{
+        background: linear-gradient(59deg, rgba(255, 0, 0, 0.336), rgba(0, 0, 255, 0.295));
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        outline: none;
+        border: 1px black solid;
+        cursor: pointer;
+        &:hover{
+            background: black;
+            color: white;
         }
     }
 }

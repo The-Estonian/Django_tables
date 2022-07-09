@@ -27,6 +27,7 @@
                 <th><a href="{% url 'result' 'Total_revenue' %}">Total Revenue</a></th>
                 <th><a href="{% url 'result' 'Total_cost' %}">Total Cost</a></th>
                 <th><a href="{% url 'result' 'Total_profit' %}">Total Profit</a></th>
+                <th>Delete</th>
                 {% if Sales %}
                     {% for row in Sales %}
                     <tr>
@@ -45,6 +46,13 @@
                         <td>{{row.Total_revenue}}</td>
                         <td>{{row.Total_cost}}</td>
                         <td>{{row.Total_profit}}</td>
+                        <td>
+                            <form class="form-delete" method="POST">
+                                {% csrf_token %}
+                                <input class="hidden" type="text" name="delete" value="{{row.id}}">
+                                <input type="submit" value="Del">
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 {% else %}

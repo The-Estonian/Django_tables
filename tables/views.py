@@ -25,17 +25,22 @@ def index(request):
                   Total_revenue=x[11],
                   Total_cost=x[12],
                   Total_profit=x[13]).save()
-        
+        return redirect("result", "id")
         
     return render(request, "tables/index.html")
 
 last_filter = None
 def results(request, filter):
     global last_filter
+    if request.method == "POST":
+        delete_id = request.POST["delete"]
+        Sales.objects.get(id=delete_id).delete()
+        sales = Sales.objects.order_by(last_filter)
+        context = {"Sales": sales}
+        return render(request, "tables/result.html", context)
     if last_filter == filter:
         filter = "-" + filter
     last_filter = filter
-    print(last_filter)
     sales = Sales.objects.order_by(filter)
     context = {"Sales": sales}
     return render(request, "tables/result.html", context)
